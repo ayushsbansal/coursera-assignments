@@ -19,13 +19,17 @@
              class="form-control" ng-model="text_input">
          </div>
          <div class="form-group">
-             <button class="btn btn-default" ng-click="">Check If Too Much</button>
+             <button class="btn btn-default" ng-click="countObjects();">Check If Too Much</button>
          </div>
          <div class="form-group message">
            <!-- Your message can go here. -->
-           Ji
+           {{message}}
          </div>
+
+           <div>PS: ,, is not counted as a string</div>
    </div>
+
+
 
    <script src="./angular.min.js"></script>
    <script src="./app.js"></script>
