@@ -8,6 +8,6 @@
   LunchCheckController.$inject = ['$scope'];
 
   function LunchCheckController($scope){
-    
+
   };
 })();
