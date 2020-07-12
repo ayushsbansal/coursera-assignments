@@ -1,0 +1,22 @@
+body{
+  background-color: #0d0d0d;
+  color:white;
+}
+
+li[ui-sref]:hover{
+  padding:5px;
+  display: inline-block;
+  border: 1px solid white;
+  cursor:pointer;
+}
+
+ul > li{
+  list-style: none;
+  padding: 10px;
+  display: inline-block;
+}
+
+ol > li{
+  padding: 2px;
+  margin-left: 150px;
+}
