@@ -4,13 +4,13 @@
 
   <div ng-if="infoctrl.response.menu_items.length === 0"><h1>  Invalid menu number </h1></div>
 
-    <div ng-show="infoctrl.response.menu_items.length !== 0 && infoctrl.data.firstname !== undefined ">
+    <div ng-show="infoctrl.data.firstname !== undefined ">
       <h2> Your information </h2>
       <br /> <br />
       Name: {{infoctrl.data.firstname}} &nbsp; {{infoctrl.data.lastname}} <br/>
       Email Address:{{infoctrl.data.emailaddress}}  <br/>
       Phone Number: {{infoctrl.data.phonenum}}  <br/>
-
+      <div ng-if="infoctrl.data.firstname !== undefined && infoctrl.response.menu_items.length !== 0">
       <h2>Your choice:</h2>
       Short Name:{{infoctrl.response.category.short_name}}<br />
       Name :{{infoctrl.response.category.name}} <br />
@@ -18,5 +18,6 @@
 
       <img alt="{{short_name}}.jpg here"
       ng-src="images/menu/{{infoctrl.response.category.short_name}}/{{infoctrl.response.category.short_name}}.jpg">
+      </div>
     </div>
 </div>
