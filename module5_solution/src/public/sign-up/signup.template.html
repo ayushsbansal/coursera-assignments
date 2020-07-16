@@ -1,0 +1,84 @@
+<link rel="stylesheet" href="css/signup.css">
+<div class="container">
+<h2> Sign Up for our newsletters </h2>
+
+<br><br>
+<fieldset>
+      <legend> Sign Up </legend>
+      <form name="regForm" novalidate>
+        <input  type="text" name='firstname' required minlength="3" ng-maxlength="10"
+          placeholder="First Name" ng-model="signupctrl.user.firstname">
+
+        <span ng-if="(regForm.firstname.$error.required || regForm.firstname.$error.minlength)
+           && regForm.firstname.$touched">
+            Last Name is Compulsory and must be minimum 3 characters</span>
+
+        <span ng-if="regForm.firstname.$error.maxlength && regForm.firstname.$touched">
+            Last Name must be lesser than 10 characters</span>
+
+        <br/>
+        <br/>
+        <input  type="text" name='lastname' required minlength="3" ng-maxlength="10"
+          placeholder="Last Name" ng-model="signupctrl.user.lastname">
+
+        <span ng-if="(regForm.lastname.$error.required || regForm.lastname.$error.minlength)
+           && regForm.lastname.$touched">
+            Last Name is Compulsory and must be minimum 3 characters</span>
+
+        <span ng-if="regForm.lastname.$error.maxlength && regForm.lastname.$touched">
+            Last Name must be lesser than 10 characters</span>
+
+        <br/>
+        <br/>
+        <input  type="email" name='emailaddress' required minlength="3"
+              placeholder="Email Address" ng-model="signupctrl.user.emailaddress">
+
+        <span ng-if="(regForm.emailaddress.$error.required || regForm.emailaddress.$error.minlength)
+               && regForm.emailaddress.$touched">
+                Email Address is Compulsory and must be minimum 3 characters</span>
+
+        <span ng-if="regForm.emailaddress.$invalid && regForm.emailaddress.$touched">
+                 Invalid Email Address </span>
+
+        <br/>
+        <br/>
+        <input  type="tel" name='phonenum' required pattern="^(\d{3})-(\d{3})-(\d{4})$"
+                placeholder="Phone Number(xxx-xxx-xxxx)" ng-model="signupctrl.user.phonenum">
+
+        <span ng-if="(regForm.phonenum.$error.required || regForm.phonenum.$invalid)
+                      && regForm.phonenum.$touched">
+        Phone Number is Compulsory and must be valid</span>
+
+        <br/>
+        <br/>
+        <input type="text" name="menu_number" placeholder="Menu Number" required
+        ng-model="signupctrl.user.menu_number">
+
+        <span ng-if="regForm.phonenum.$error.required
+                      && regForm.phonenum.$touched">
+        Please enter Menu Number to help us serve you better</span>
+      </form>
+
+        <br/>
+        <button type='submit' ng-click="signupctrl.submit()"
+        ui-sref="public.itemsinlist({category:signupctrl.user.menu_number})"
+        ng-disabled="regForm.$invalid"> Register</button>
+
+        <div ng-if="signupctrl.menuinfo.menu_items.length !== 0 &&
+        signupctrl.menuinfo.menu_items.length !== defined">
+          Information you entered is saved !!!
+        </div>
+        <div ng-if="signupctrl.menuinfo.menu_items.length === 0">
+          Wrong Menu Number Detected !! Enter Again!
+        </div>
+        <br/>
+        <div>
+        Last Entered information:<br/>
+        {{signupctrl.data.firstname}}&nbsp;{{signupctrl.data.lastname}}
+        {{signupctrl.data.emailaddress}}
+        {{signupctrl.data.phonenum}}
+        {{signupctrl.data.menu_number}}
+        </div>
+</fieldset>
+
+</div>

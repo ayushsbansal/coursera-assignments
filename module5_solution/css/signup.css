@@ -1,0 +1,25 @@
+h2{
+  color: white;
+}
+
+ legend{
+   color:white;
+ }
+
+ input{
+   color:black;
+ }
+
+input.ng-touched.ng-valid{
+  background-color: #aea;
+  border: 2px solid green;
+}
+
+input.ng-touched.ng-invalid{
+  background-color: #eaa;
+    border: 2px solid red;
+}
+
+button{
+  background-color: #0a0;
+}

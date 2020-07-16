@@ -1,0 +1,22 @@
+<div class="container">
+<h3 ui-sref="public.signup" ng-if="infoctrl.data === undefined">{{infoctrl.message}}
+<a > Go to Sign Up Page </a></h3>
+
+  <div ng-if="infoctrl.response.menu_items.length === 0"><h1>  Invalid menu number </h1></div>
+
+    <div ng-show="infoctrl.response.menu_items.length !== 0 && infoctrl.data.firstname !== undefined ">
+      <h2> Your information </h2>
+      <br /> <br />
+      Name: {{infoctrl.data.firstname}} &nbsp; {{infoctrl.data.lastname}} <br/>
+      Email Address:{{infoctrl.data.emailaddress}}  <br/>
+      Phone Number: {{infoctrl.data.phonenum}}  <br/>
+
+      <h2>Your choice:</h2>
+      Short Name:{{infoctrl.response.category.short_name}}<br />
+      Name :{{infoctrl.response.category.name}} <br />
+      Special Instructions: {{infoctrl.response.category.special_instructions}}<br />
+
+      <img alt="{{short_name}}.jpg here"
+      ng-src="images/menu/{{infoctrl.response.category.short_name}}/{{infoctrl.response.category.short_name}}.jpg">
+    </div>
+</div>
